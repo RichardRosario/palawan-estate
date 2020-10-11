@@ -2,7 +2,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions
 from django.contrib.auth import get_user_model
-User = get_user_model()
 
 
 class SignupView(APIView):
@@ -17,7 +16,8 @@ class SignupView(APIView):
         password2 = data['password2']
 
         if password == password2:
-            if User.objects.filter(email=email.exist()):
+            User = get_user_model()
+            if User.objects.filter(email=email).exists():
                 return Response({'error': 'Email already in use.'})
             else:
                 if len(password) < 6:
