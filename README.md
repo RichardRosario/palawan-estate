@@ -4,8 +4,11 @@
 
 ## Account registration and login
 
-## custom user model
-
 ## Django backend
+
+1. custom user model
+2. creating user account app
+3. create realtor/agent accounts app
+4. creating listing app
 
 ## React frontend
