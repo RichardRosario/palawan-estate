@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-from backend.realtors.models import Realtor
+from realtors.models import Realtor
 
 
 class Listing(models.Model):
@@ -15,7 +15,7 @@ class Listing(models.Model):
         TOWNHOUSE = 'Townhouse'
 
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(blank=True, unique=True)
     title = models.CharField(max_length=200)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=150)
