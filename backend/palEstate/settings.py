@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'accounts',
-    'realtors'
+    'realtors',
+    'listings',
 ]
 
 MIDDLEWARE = [
