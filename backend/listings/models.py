@@ -15,12 +15,12 @@ class Listing(models.Model):
         TOWNHOUSE = 'Townhouse'
 
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
-    slug = models.SlugField(blank=True, unique=True)
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=200)
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=150)
     state = models.CharField(max_length=150)
-    zipcode = models.IntegerField(20)
+    zipcode = models.CharField(max_length=20)
     description = models.TextField(blank=True)
     sale_type = models.CharField(
         max_length=50, choices=SaleType.choices, default=SaleType.FOR_SALE)
@@ -29,7 +29,7 @@ class Listing(models.Model):
     price = models.IntegerField()
     bedrooms = models.IntegerField()
     bathrooms = models.DecimalField(max_digits=2, decimal_places=1)
-    sqft = models.IntegerField()
+    sqm = models.IntegerField()
     open_house = models.BooleanField(default=False)
     photo_main = models.ImageField(
         upload_to='photos/%Y/%m/%d', default='default.jpg')
