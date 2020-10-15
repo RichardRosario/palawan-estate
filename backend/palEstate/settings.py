@@ -80,7 +80,13 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
-
+# email backend auth
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('palEstate_gmail_user')
+EMAIL_HOST_PASSWORD = os.environ.get('palEstate_gmail_Secret')
+EMAIL_USE_TLS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
