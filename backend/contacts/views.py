@@ -16,13 +16,14 @@ class ContactCreateView(APIView):
             send_mail(
                 data['subject'],
                 'Name: '
-                + data['name'],
+                + data['name']
                 + '\nEmail: '
-                + data['email'],
-                +'\n\nMessage: '
-                + data['message'],
+                + data['email']
+                + '\n\nMessage:\n'
+                  + data['message'],
                 os.environ.get('palEstate_gmail_user'),
-                [os.environ.get('palEstate_gmail_user')]
+                [os.environ.get('palEstate_gmail_user')],
+                fail_silently=False
             )
 
             contact = Contact(name=data['name'], email=data['email'],
