@@ -12,3 +12,6 @@
 4. creating listing app
 
 ## React frontend
+
+1. setup react directory structure
+2. adding the container files
