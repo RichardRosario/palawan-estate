@@ -4,7 +4,7 @@ import React from 'react'
 const contact = () => {
 
     return (
-        <main className='home'>
+        <main className='contact'>Realest Estate - contact
                 <title>Realest Estate - contact</title>
                 <meta
                     name='description'

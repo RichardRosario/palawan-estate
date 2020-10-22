@@ -10,21 +10,19 @@ import listingDetails from './containers/ListingDetail'
 import listings from './containers/Listings'
 import NotFound from './components/NotFound'
 
-
-
-
+import './sass/main.scss'
 
 const App = () => (
     <Router>
         <Layout>
             <Switch>
                 <Route path='/' exact component={Home} />
-                <Route path='about' exact component={about} />
-                <Route path='signIn' exact component={signIn} />
-                <Route path='signUp' exact component={signUp} />
-                <Route path='contact' exact component={contact} />
-                <Route path='listings' exact component={listings} />
-                <Route path='listingDetails' exact component={listingDetails} />
+                <Route path='/about' exact component={about} />
+                <Route path='/signin' exact component={signIn} />
+                <Route path='/signup' exact component={signUp} />
+                <Route path='/contact' exact component={contact} />
+                <Route path='/listings' exact component={listings} />
+                <Route path='/listingDetails' exact component={listingDetails} />
                 <Route  component={NotFound} />
             </Switch>
         </Layout>

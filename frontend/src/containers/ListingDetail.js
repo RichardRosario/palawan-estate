@@ -4,7 +4,7 @@ import React from 'react'
 const listingDetails = () => {
 
     return (
-        <main className='home'>
+        <main className='home'> listing details
                 <title>Realest Estate - listing details</title>
                 <meta
                     name='description'

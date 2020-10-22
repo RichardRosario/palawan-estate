@@ -4,7 +4,7 @@ import React from 'react'
 const Home = () => {
 
     return (
-        <main className='home'>
+        <main className='home'>Home
                 <title>Realest Estate - Home</title>
                 <meta
                     name='description'
