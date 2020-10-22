@@ -1,25 +1,37 @@
 import React from 'react';
 
 const navbar = () => {
-    return (
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
-            <div class="container">
-                <a class="navbar-brand" href="/">PalEstate</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mobile-nav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="/about"> About Us</a></li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/signin">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    )
-}
 
-export default navbar
+    return (
+
+            <nav className='navbar'>
+                <div className='navbar__top'>
+                    <div className='navbar__top__logo'>
+                        <a className='navbar__top__logo__link' href='/'>Palawan Estate</a>
+                    </div>
+                    <div className='navbar__top__auth'>
+
+                    </div>
+                </div>
+                <div className='navbar__bottom'>
+                    <li className='navbar__bottom__item'>
+                        <a className='navbar__bottom__item__link' exact href='/'>Home</a>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <a className='navbar__bottom__item__link' exact href='/listings'>Listings</a>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <a className='navbar__bottom__item__link' exact href='/about'>About</a>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <a className='navbar__bottom__item__link' exact href='/contact'>Contact</a>
+                    </li>
+                </div>
+            </nav>
+
+    );
+};
+
+
+
+export default navbar;
