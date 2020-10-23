@@ -16,3 +16,4 @@
 1. setup react directory structure
 2. adding the container files
 3. installed and setup sass for scss files
+4. redux setup and handling authentication
