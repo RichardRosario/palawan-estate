@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.20.0",
     "cra-template": "1.0.3",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
@@ -12,7 +13,8 @@
     "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^8.3.1"
   },
   "description": "React-redux frontend for palawan estate web app",
   "main": "index.js",
