@@ -19,3 +19,4 @@
 4. redux setup
 5. creating types and actions
 6. added authentication, auth reducers, and npm install uuid
+7. implemented sass styling on navbar
