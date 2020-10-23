@@ -18,4 +18,4 @@
 3. installed and setup sass for scss files
 4. redux setup
 5. creating types and actions
-6. added authentication, npm install uuid
+6. added authentication, auth reducers, and npm install uuid
