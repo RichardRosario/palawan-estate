@@ -15,16 +15,16 @@ const navbar = () => {
                 </div>
                 <div className='navbar__bottom'>
                     <li className='navbar__bottom__item'>
-                        <a className='navbar__bottom__item__link' exact href='/'>Home</a>
+                        <a className='navbar__bottom__item__link' exact="true" href='/'>Home</a>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <a className='navbar__bottom__item__link' exact href='/listings'>Listings</a>
+                        <a className='navbar__bottom__item__link' exact="true" href='/listings'>Listings</a>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <a className='navbar__bottom__item__link' exact href='/about'>About</a>
+                        <a className='navbar__bottom__item__link' exact="true" href='/about'>About</a>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <a className='navbar__bottom__item__link' exact href='/contact'>Contact</a>
+                        <a className='navbar__bottom__item__link' exact="true" href='/contact'>Contact</a>
                     </li>
                 </div>
             </nav>

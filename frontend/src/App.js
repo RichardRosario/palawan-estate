@@ -9,7 +9,7 @@ import contact from './containers/Contact'
 import listingDetails from './containers/ListingDetail'
 import listings from './containers/Listings'
 import NotFound from './components/NotFound'
-import Provider from 'react-redux'
+import {Provider} from 'react-redux'
 import store from './store'
 
 import './sass/main.scss'
@@ -19,13 +19,13 @@ const App = () => (
         <Router>
             <Layout>
                 <Switch>
-                    <Route path='/' exact component={Home} />
-                    <Route path='/about' exact component={about} />
-                    <Route path='/signin' exact component={signIn} />
-                    <Route path='/signup' exact component={signUp} />
-                    <Route path='/contact' exact component={contact} />
-                    <Route path='/listings' exact component={listings} />
-                    <Route path='/listingDetails' exact component={listingDetails} />
+                    <Route exact path='/' component={Home} />
+                    <Route path='/about' component={about} />
+                    <Route path='/signin' component={signIn} />
+                    <Route path='/signup' component={signUp} />
+                    <Route path='/contact' component={contact} />
+                    <Route path='/listings' component={listings} />
+                    <Route path='/listingDetails' component={listingDetails} />
                     <Route  component={NotFound} />
                 </Switch>
             </Layout>
