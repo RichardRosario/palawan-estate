@@ -21,7 +21,7 @@ const SignIn = ({login, isAuthenticated}) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        login(...formData)
+        login({email, password})
     }
 
     if (isAuthenticated)
@@ -37,24 +37,32 @@ const SignIn = ({login, isAuthenticated}) => {
             </Helmet>
             <h1 className="auth__title">Sign In</h1>
             <p className="auth_lead">Sign in with your account</p>
-            <form className="auth__form" onSubmit={e => onSubmit(e)}>
-                <div className="auth__form__group">
+              <form className='auth__form' onSubmit={e => onSubmit(e)}>
+                <div className='auth__form__group'>
                     <input 
-                        type="email" 
-                        placeholder="email" 
-                        value={email} 
-                        className="auth__form__input" 
-                        onChange={e=>onChange(e)} />
+                        className='auth__form__input'
+                        type='email'
+                        placeholder='Email' 
+                        autoComplete="off"
+                        name='email' 
+                        value={email}
+                        onChange={e => onChange(e)}
+                        required
+                    />
                 </div>
-                <div className="auth__form__group">
-                    <input 
-                        type="password" 
-                        placeholder="password" 
-                        value={password} 
-                        className="auth__form__input" 
-                        onChange={e=>onChange(e)} />
+                <div className='auth__form__group'>
+                    <input
+                        className='auth__form__input'
+                        type='password'
+                        placeholder='Password' 
+                        autoComplete="off"
+                        name='password'
+                        value={password}
+                        onChange={e => onChange(e)}
+                        minLength='6'
+                    />
                 </div>
-                <button className="auth_form_button">Sign in</button>
+                <button className='auth__form__button'>Login</button>
             </form>
             <p className="auth_authtext">
                 Don't have an account? <Link to="/signup" className="auth__authtext_link">Sign Up</Link>
@@ -66,7 +74,7 @@ const SignIn = ({login, isAuthenticated}) => {
 
 SignIn.propTypes = {
     login: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired
+    isAuthenticated: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
