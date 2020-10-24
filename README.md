@@ -20,3 +20,4 @@
 5. creating types and actions
 6. added authentication, auth reducers, and npm install uuid
 7. implemented sass styling on navbar
+8. added the login logic
