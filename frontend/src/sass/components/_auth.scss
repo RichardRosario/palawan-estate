@@ -55,10 +55,10 @@
 
     &__link {
       text-decoration: none;
-      color: $color-primary;
+      color: $color-quaternary;
 
       &:hover {
-        color: $color-link-hover;
+        color: $color-primary;
       }
     }
   }
