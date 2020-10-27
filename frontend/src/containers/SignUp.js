@@ -99,8 +99,14 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
     );
 
 };
+SignUp.propTypes = {
+    signup: PropTypes.func.isRequired,
+    setAlert: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+}
 
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
 
-
-
-export default connect()(SignUp);
+export default connect(mapStateToProps, {signup, setAlert})(SignUp);
