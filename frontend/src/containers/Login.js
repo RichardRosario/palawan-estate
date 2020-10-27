@@ -1,51 +1,48 @@
-import React, {useState} from 'react'
-import {Link, Redirect} from 'react-router-dom'
-import {Helmet} from 'react-helmet'
-import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
-import {login} from '../actions/auth'
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../actions/auth';
 
-const SignIn = ({login, isAuthenticated}) => {
+const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-    })
+        email: '',
+        password: ''
+    });
 
-    const { email, password } = formData
+    const { email, password } = formData;
 
-    const onChange = (e) => setFormData({
-        ...formData,
-        [e.target.name]: e.target.value 
-    })
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = (e) => {
-        e.preventDefault()
+    const onSubmit = e => {
+        e.preventDefault();
 
-        login({email, password})
-    }
+        login(email, password);
+    };
 
     if (isAuthenticated)
-        return <Redirect to="/" />
+        return <Redirect to='/' />;
     
     return (
-        <div className="auth">
+        <div className='auth'>
             <Helmet>
-            <title>this is the login page</title>
-                <meta name='description'
+                <title>Realest Estate - Login</title>
+                <meta
+                    name='description'
                     content='login page'
                 />
             </Helmet>
-            <h1 className="auth__title">Sign In</h1>
-            <p className="auth_lead">Sign in with your account</p>
-              <form className='auth__form' onSubmit={e => onSubmit(e)}>
+            <h1 className='auth__title'>Sign In</h1>
+            <p className='auth__lead'>Sign into your Account</p>
+            <form className='auth__form' onSubmit={e => onSubmit(e)}>
                 <div className='auth__form__group'>
                     <input 
                         className='auth__form__input'
                         type='email'
                         placeholder='Email' 
                         autoComplete="off"
-                        name='email' 
-                        value={email}
+                        name='email' value={email}
                         onChange={e => onChange(e)}
                         required
                     />
@@ -64,21 +61,20 @@ const SignIn = ({login, isAuthenticated}) => {
                 </div>
                 <button className='auth__form__button'>Login</button>
             </form>
-            <p className="auth_authtext">
-                Don't have an account? <Link to="/signup" className="auth__authtext_link">Sign Up</Link>
+            <p className='auth__authtext'>
+                Don't have an account? <Link className='auth__authtext__link' to='/signup'>Sign Up</Link>
             </p>
-
         </div>
-    )
-}
+    );
+};
 
-SignIn.propTypes = {
+Login.propTypes = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
-}
+};
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
-})
+});
 
-export default connect(mapStateToProps, {login})(SignIn)
+export default connect(mapStateToProps, { login })(Login);

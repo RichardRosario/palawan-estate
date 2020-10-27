@@ -58,7 +58,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input 
                         className='auth__form__input'
                         type='email'
-                        placeholder='Email' 
+                        placeholder='Email'
                         autoComplete="off"
                         name='email'
                         value={email}
@@ -99,14 +99,15 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
     );
 
 };
+
 SignUp.propTypes = {
-    signup: PropTypes.func.isRequired,
     setAlert: PropTypes.func.isRequired,
+    signup: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
-}
+};
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps, {signup, setAlert})(SignUp);
+export default connect(mapStateToProps, { setAlert, signup })(SignUp);

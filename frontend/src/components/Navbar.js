@@ -12,7 +12,7 @@ const navbar = ({auth:{isAuthenticated, loading}, logout}) => {
 
     const guestLinks = (
         <Fragment>
-            <Link className='navbar__top__auth__link' to='/signin'>Login</Link>
+            <Link className='navbar__top__auth__link' to='/login'>Login</Link>
             <Link className='navbar__top__auth__link' to='/signup'>Sign Up</Link>
         </Fragment>
     );
