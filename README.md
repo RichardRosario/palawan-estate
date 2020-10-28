@@ -22,3 +22,4 @@
 7. implemented sass styling on navbar
 8. added the login logic
 9. added signup logic
+10. added the listing search in homepage
