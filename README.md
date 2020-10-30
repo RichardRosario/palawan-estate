@@ -23,3 +23,4 @@
 8. added the login logic
 9. added signup logic
 10. added the listing search in homepage
+11. added the listings component
