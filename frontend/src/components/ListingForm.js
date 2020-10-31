@@ -72,14 +72,14 @@ const ListingForm = (props) => {
                     <div className='listingform__section'>
                         <label className='listingform__label' htmlFor='price'>Minimum Price</label>
                         <select className='listingform__select' name='price' onChange={e => onChange(e)} value={price}>
-                            <option>$0+</option>
-                            <option>$200,000+</option>
-                            <option>$400,000+</option>
-                            <option>$600,000+</option>
-                            <option>$800,000+</option>
-                            <option>$1,000,000+</option>
-                            <option>$1,200,000+</option>
-                            <option>$1,500,000+</option>
+                            <option>0+</option>
+                            <option>200,000+</option>
+                            <option>400,000+</option>
+                            <option>600,000+</option>
+                            <option>800,000+</option>
+                            <option>1,000,000+</option>
+                            <option>1,200,000+</option>
+                            <option>1,500,000+</option>
                             <option>Any</option>
                         </select>
                     </div>
