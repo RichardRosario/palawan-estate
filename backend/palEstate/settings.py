@@ -135,7 +135,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSIOM_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -147,6 +147,11 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-FILE_UPLOAD_PERMISSIONS = 0o640
+FILE_UPLOAD_PERMISSIONS=0o640
 
 AUTH_USER_MODEL = 'accounts.UserAccount'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
