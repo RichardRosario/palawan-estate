@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import Loader from 'react-loader-spinner'
-import PropTypes from 'prop-types'
-import axios from 'axios'
+import React, { useState } from 'react';
+import axios from 'axios';
+import Loader from 'react-loader-spinner';
+import PropTypes from 'prop-types';
 
-const ListingForm = (props) => {  
+const ListingForm = (props) => {
     const [formData, setFormData] = useState({
         sale_type: 'For Sale',
         price: '$0+',
@@ -21,33 +21,33 @@ const ListingForm = (props) => {
 
     const [loading, setLoading] = useState(false);
 
-    const onChange = event => setFormData({ ...formData, [event.target.name]: event.target.value });
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = event => {
-        event.preventDefault();
+    const onSubmit = e => {
+        e.preventDefault();
 
         const config = {
-            headers:{
-                "Content-Type": "application/json"
+            headers: {
+                'Content-Type': 'application/json'
             }
-        }
+        };
 
-        setLoading(true)
+        setLoading(true);
         axios.post(`http://localhost:8000/api/listings/search`, { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
-        .then(res=>{
-            setLoading(false)
-            props.setListings(res.data)
-            window.scrollTo(0,0)
-        }).catch(err=>{
-            setLoading(false)
-            window.scrollTo(0,0)
+        .then(res => {
+            setLoading(false);
+            props.setListings(res.data);
+            window.scrollTo(0, 0);
         })
-    }
-
-
+        .catch(err => {
+            setLoading(false);
+            window.scrollTo(0, 0);
+        })
+    };
 
     return (
-        <form className='listingform' onSubmit={e => onSubmit(e)}>          <div className='row'>
+        <form className='listingform' onSubmit={e => onSubmit(e)}>
+            <div className='row'>
                 <div className='col-1-of-6'>
                     <div className='listingform__section'>
                         <label className='listingform__label' htmlFor='sale_type'>Sale or Rent</label>
@@ -159,8 +159,7 @@ const ListingForm = (props) => {
                                 type="Oval"
                                 color="#424242"
                                 height={50}
-                                width={50} 
-                                setLoading={setLoading}
+                                width={50}
                             />
                         </div> : 
                         <button className='listingform__button listingform__button--primary'>Save</button>
@@ -169,10 +168,10 @@ const ListingForm = (props) => {
             </div>
         </form>
     );
-    
-}
+};
+
 ListingForm.propTypes = {
     setListings: PropTypes.func.isRequired
-}
+};
 
-export default ListingForm
+export default ListingForm;

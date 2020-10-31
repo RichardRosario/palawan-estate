@@ -1,32 +1,31 @@
-import React from 'react'
-import Card from './Card'
+import React from 'react';
+import Card from './Card';
 
-const listings = () => {
-
-    const getListings = ({listings}) => {
-        let listingsOnpage = []
-        let result = []
+const listings = ({ listings }) => {
+    const getListings = () => {
+        let listingsOnPage = [];
+        let result = [];
 
         listings.map(listing => {
-            return listingsOnpage.push(
-                <Card 
-                title={listing.title} 
-                address={listing.address} 
-                city={listing.city}
-                state={listing.state}
-                price={listing.price}
-                sale_type={listing.sale_type}
-                home_type={listing.home_type}
-                bedrooms={listing.bedrooms}
-                bathrooms={listing.bathrooms}
-                sqft={listing.sqft}
-                photo_main={listing.photo_main}
-                slug={listing.slug}
+            return listingsOnPage.push(
+                <Card
+                    title={listing.title}
+                    address={listing.address}
+                    city={listing.city}
+                    state={listing.state}
+                    price={listing.price}
+                    sale_type={listing.sale_type}
+                    home_type={listing.home_type}
+                    bedrooms={listing.bedrooms}
+                    bathrooms={listing.bathrooms}
+                    sqft={listing.sqft}
+                    photo_main={listing.photo_main}
+                    slug={listing.slug}
                 />
-            )
-        })
+            );
+        });
 
-        for (let i = 0; i < listings.length; i += 3) {
+        for (let i = 0; i < listings.length; i += 2) {
             result.push(
                 <div className='row'>
                     <div className='col-1-of-3'>
@@ -45,12 +44,11 @@ const listings = () => {
         return result;
     };
 
-
     return (
         <div>
             {getListings()}
         </div>
-    )
+    );
 }
 
-export default listings
+export default listings;
