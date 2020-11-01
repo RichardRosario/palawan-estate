@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const Listings = ({ listings }) => {
+const listings = ({ listings }) => {
     const getListings = () => {
         let listingsOnPage = [];
         let result = [];
@@ -51,4 +51,4 @@ const Listings = ({ listings }) => {
     );
 }
 
-export default Listings;
+export default listings;

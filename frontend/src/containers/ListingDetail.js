@@ -1,57 +1,58 @@
-import React, {useState, useEffects} from 'react'
-import {Helmet} from 'react-helmet'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-
-const ListingDetails = (props) => {
-    const [listing, setListing] = useState({})
-    const [realtor, setRealtor] = useState({})
-    const [price, setPrice] = useState(0)
+const ListingDetail = (props) => {
+    const [listing, setListing] = useState({});
+    const [realtor, setRealtor] = useState({});
+    const [price, setPrice] = useState(0);
 
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     };
 
-    useEffects(()=>{
-        const slug = props.match.params.id
+    useEffect(() => {
+        const slug = props.match.params.id;
 
         const config = {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
-        }
+        };
 
         axios.get(`http://localhost:8000/api/listings/${slug}`, config)
-        .then(res=>{
-            setListing(res.data)
-            setPrice(numberWithCommas(res.data.price))
+        .then(res => {
+            setListing(res.data);
+            setPrice(numberWithCommas(res.data.price));
         })
-        .catch(err=>{})
+        .catch(err => {
 
-    },[props.match.params.id] )
+        });
+    }, [props.match.params.id]);
 
-    useEffects(()=>{
-        const id = listing.realtor
+    useEffect(() => {
+        const id = listing.realtor;
 
         const config = {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
-        }
+        };
 
         if (id) {
-            axios.get(`http://localhost:8000/api/${realtor}`, config)
-            .then((res)=>{
-                setRealtor(res.data)
+            axios.get(`http://localhost:8000/api/realtors/${id}`, config)
+            .then(res => {
+                setRealtor(res.data);
             })
-            .catch(err=>{})
-        }
-    }, [listing.realtor])
+            .catch(err => {
 
-    // listing images display
-    const displayInteriorImages = () =>{
-        let images = []
+            });
+        }
+    }, [listing.realtor]);
+
+    const displayInteriorImages = () => {
+        let images = [];
 
         images.push(
             <div key={1} className='row'>
@@ -332,7 +333,6 @@ const ListingDetails = (props) => {
             {displayInteriorImages()}
         </div>
     );
-
 };
 
-export default ListingDetails
+export default ListingDetail;

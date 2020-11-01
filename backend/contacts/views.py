@@ -20,17 +20,16 @@ class ContactCreateView(APIView):
                 + '\nEmail: '
                 + data['email']
                 + '\n\nMessage:\n'
-                  + data['message'],
+                + data['message'],
                 os.environ.get('palEstate_gmail_user'),
                 [os.environ.get('palEstate_gmail_user')],
                 fail_silently=False
             )
 
-            contact = Contact(name=data['name'], email=data['email'],
-                              subject=data['subject'], message=data['message'])
+            contact = Contact(name=data['name'], email=data['email'], subject=data['subject'], message=data['message'])
             contact.save()
 
-            return Response({'success': 'Messagae sent successfully!'})
+            return Response({'success': 'Message sent successfully'})
 
         except:
-            return Response({'error': 'Message sending failed.'})
+            return Response({'error': 'Message failed to send'})

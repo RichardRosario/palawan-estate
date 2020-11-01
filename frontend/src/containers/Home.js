@@ -4,9 +4,8 @@ import ListingForm from '../components/ListingForm';
 import Listings from '../components/Listings';
 import Pagination from '../components/Pagination';
 
-
 const Home = () => {
-    const [listings, setListings] = useState([])
+    const [listings, setListings] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [listingsPerPage, setListingsPerPage] = useState(3);
     const [active, setActive] = useState(1);
@@ -34,7 +33,6 @@ const Home = () => {
         }
     };
 
-
     return (
         <main className='home'>
             <Helmet>
@@ -61,8 +59,7 @@ const Home = () => {
                                 previous={previous_number}
                                 next={next_number}
                                 active={active}
-                                setActive={setActive} 
-                                setListingsPerPage={setListingsPerPage}
+                                setActive={setActive}
                             />
                         ) : null
                     }
@@ -72,4 +69,4 @@ const Home = () => {
     );
 };
 
-export default Home
+export default Home;

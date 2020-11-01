@@ -58,7 +58,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input 
                         className='auth__form__input'
                         type='email'
-                        placeholder='Email'
+                        placeholder='Email' 
                         autoComplete="off"
                         name='email'
                         value={email}
