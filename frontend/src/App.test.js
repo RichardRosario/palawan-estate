@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders react-django link', () => {
+test('renders learn react link', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/react-django/i);
+  const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });

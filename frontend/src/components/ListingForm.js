@@ -13,7 +13,7 @@ const ListingForm = (props) => {
         sqft: '1000+',
         days_listed: '1 or less',
         has_photos: '1+',
-        open_house: '0',
+        open_house: 'false',
         keywords: ''
     });
 
@@ -33,26 +33,20 @@ const ListingForm = (props) => {
         };
 
         setLoading(true);
-
-        const sendData = async () => {
-            axios.post(`http://localhost:8000/api/listings/search`, { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
-            .then(res => {
-                setLoading(false);
-                props.setListings(res.data);
-                window.scrollTo(0, 0);
-            })
-            .catch(err => {
-                setLoading(false);
-                window.scrollTo(0, 0);
-            })
-
-        }
-        sendData()
-        
+        axios.post(`${process.env.REACT_APP_API_URL}/api/listings/search`, { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
+        .then(res => {
+            setLoading(false);
+            props.setListings(res.data);
+            window.scrollTo(0, 0);
+        })
+        .catch(err => {
+            setLoading(false);
+            window.scrollTo(0, 0);
+        })
     };
 
     return (
-        <form method="post" className='listingform' onSubmit={e => onSubmit(e)}>
+        <form className='listingform' onSubmit={e => onSubmit(e)}>
             <div className='row'>
                 <div className='col-1-of-6'>
                     <div className='listingform__section'>
@@ -78,14 +72,14 @@ const ListingForm = (props) => {
                     <div className='listingform__section'>
                         <label className='listingform__label' htmlFor='price'>Minimum Price</label>
                         <select className='listingform__select' name='price' onChange={e => onChange(e)} value={price}>
-                            <option>0+</option>
-                            <option>200,000+</option>
-                            <option>400,000+</option>
-                            <option>600,000+</option>
-                            <option>800,000+</option>
-                            <option>1,000,000+</option>
-                            <option>1,200,000+</option>
-                            <option>1,500,000+</option>
+                            <option>$0+</option>
+                            <option>$200,000+</option>
+                            <option>$400,000+</option>
+                            <option>$600,000+</option>
+                            <option>$800,000+</option>
+                            <option>$1,000,000+</option>
+                            <option>$1,200,000+</option>
+                            <option>$1,500,000+</option>
                             <option>Any</option>
                         </select>
                     </div>
@@ -154,10 +148,7 @@ const ListingForm = (props) => {
                     </div>
                     <div className='listingform__altsection'>
                         <label className='listingform__label' htmlFor='open_house'>Open Houses</label>
-                        <select className='listingform__checkbox' name='open_house' onChange={e => onChange(e)} value={open_house} >
-                            <option>0</option>
-                            <option>1</option>
-                        </select>
+                        <input className='listingform__checkbox' name='open_house' type='checkbox' onChange={e => onChange(e)} value={open_house} />
                     </div>
                 </div>
 

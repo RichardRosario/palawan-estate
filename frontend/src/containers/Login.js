@@ -40,8 +40,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <input 
                         className='auth__form__input'
                         type='email'
-                        placeholder='Email' 
-                        autoComplete="off"
+                        placeholder='Email'
                         name='email' value={email}
                         onChange={e => onChange(e)}
                         required
@@ -51,8 +50,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <input
                         className='auth__form__input'
                         type='password'
-                        placeholder='Password' 
-                        autoComplete="off"
+                        placeholder='Password'
                         name='password'
                         value={password}
                         onChange={e => onChange(e)}

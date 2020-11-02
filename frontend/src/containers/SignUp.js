@@ -46,8 +46,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input 
                         className='auth__form__input'
                         type='text'
-                        placeholder='Name' 
-                        autoComplete="off"
+                        placeholder='Name'
                         name='name'
                         value={name}
                         onChange={e => onChange(e)}
@@ -58,8 +57,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input 
                         className='auth__form__input'
                         type='email'
-                        placeholder='Email' 
-                        autoComplete="off"
+                        placeholder='Email'
                         name='email'
                         value={email}
                         onChange={e => onChange(e)}
@@ -70,8 +68,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input
                         className='auth__form__input'
                         type='password'
-                        placeholder='Password' 
-                        autoComplete="off"
+                        placeholder='Password'
                         name='password'
                         value={password}
                         onChange={e => onChange(e)}
@@ -82,8 +79,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
                     <input
                         className='auth__form__input'
                         type='password'
-                        placeholder='Confirm Password' 
-                        autoComplete="off"
+                        placeholder='Confirm Password'
                         name='password2'
                         value={password2}
                         onChange={e => onChange(e)}
